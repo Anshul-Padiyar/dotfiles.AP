@@ -1,0 +1,190 @@
+{
+    "layer": "top",
+    "position": "top",
+    "margin-top": 0,
+    "margin-bottom": 0,
+    "margin-left": 0,
+    "margin-right": 0,
+    "spacing": 0,
+
+    // ###################################
+    // # Choose the order of the modules #
+    // ###################################
+    "modules-left": [
+        "custom/appmenu",
+        "hyprland/workspaces",
+        "hyprland/window"
+    ],
+    "modules-center": ["clock", "custom/weather"],
+    "modules-right": [
+        "network#1",
+        "network#2",
+        "bluetooth",
+        "pulseaudio",
+        "battery",
+        "custom/power"
+    ],
+
+    // ###################################
+    // ##   Modules configuration       ##
+    // ###################################
+    "custom/appmenu": {
+        "format": "    ",
+        "on-click": "rofi -disable-history -drun-match-fields name -show drun -theme-str '@import \"~/.config/waybar/script/app.rasi\"'",
+        "on-click-right": "killall rofi",
+        "tooltip": false
+    },
+
+    "hyprland/workspaces": {
+        "disable-scroll": true,
+        "all-outputs": true,
+        "on-scroll-up": "hyprctl dispatch workspace r-1",
+        "on-scroll-down": "hyprctl dispatch workspace r+1",
+        "warp-on-scroll": true,
+        "format": "{name}"
+    },
+
+    "hyprland/window": {
+        "format": "{class}",
+        "separate-outputs": true
+    },
+
+    "keyboard-state": {
+        "numlock": true,
+        "capslock": true,
+        "format": {
+            "numlock": "N {icon}",
+            "capslock": "C {icon}"
+        },
+        "format-icons": {
+            "locked": "",
+            "unlocked": ""
+        },
+        "device-path": "/dev/input/event4"
+    },
+
+    "clock": {
+        "format": "{:%a, %d %b, %I:%M %p}",
+        "tooltip-format": "<tt><big>{calendar}</big></tt>",
+        "calendar": {
+            "mode": "month",
+            "mode-mon-col": 4,
+            "weeks-pos": "none",
+            "on-scroll": 1,
+            "format": {
+                "months": "<span color='#ffead3'><b>{}</b></span>",
+                "days": "<span color='#ecc6d9'><b>{}</b></span>",
+                "weeks": "<span color='#99ffdd'><b>W{}</b></span>",
+                "weekdays": "<span color='#ffcc66'><b>{}</b></span>",
+                "today": "<span color='#ff6699'><b><u>{}</u></b></span>"
+            }
+        },
+        "actions": {
+            "on-click-left": "tz_up",
+            "on-click-right": "tz_down",
+            "on-scroll-up": "shift_up",
+            "on-scroll-down": "shift_down"
+        }
+    },
+
+    // "custom/weather": {
+    //     "format": "{}",
+    //     "tooltip": true,
+    //     "interval": 1800,
+    //     "exec": "~/.config/waybar/script/wttr.py",
+    //     "return-type": "json"
+    // },
+
+    "pulseaudio": {
+        // "scroll-step": 1, // %, can be a float
+        "reverse-scrolling": 1,
+
+        "format": "{icon}   {volume}%",
+        "format-muted": "",
+        "format-icons": {
+            "headphone": "",
+            "hands-free": "",
+            "headset": "",
+            "default": ["", "", ""]
+        },
+        "on-click": "pavucontrol"
+    },
+
+    "network#1": {
+        "format-wifi": "<span size='13000' foreground='#fab387'>  </span>{bandwidthUpBytes}<span size='13000' foreground='#a6e3a1'>  </span>{bandwidthDownBytes}",
+        "format-ethernet": "<span size='13000' foreground='#fab387'>  </span>{bandwidthUpBytes}<span size='13000' foreground='#a6e3a1'>  </span>{bandwidthDownBytes}",
+        "format-alt": "<span size='13000' foreground='#fab387'> </span><span size='13000' foreground='#a6e3a1'> </span>{bandwidthTotalBytes}",
+        "format-linked": "{ifname} (No IP) ",
+        "tooltip-format-wifi": "Total Speed: {bandwidthTotalBytes}\n{eesid}",
+        "tooltip-format-ethernet": "Total Speed: {bandwidthTotalBytes}\n{ifname}"
+    },
+    "network#2": {
+        "format-wifi": "<span size='13000' foreground='#cba6f7'> </span> {signalStrength}%",
+        "format-ethernet": "<span size='13000' foreground='#cba6f7'> </span> {ifname}",
+        "format-linked": "{ifname} (No IP) ",
+        "format-disconnected": "<span size='13000' foreground='#cba6f7'>  </span>Disconnected",
+        "tooltip-format-wifi": "{essid}  \n{ipaddr}\nSignal Strenght: {signalStrength}%",
+        "tooltip-format-ethernet": "{ifname}: {ipaddr}/{cidr}\n{gwaddr}",
+        "on-click": "kitty -e nmtui"
+    },
+
+    "battery": {
+        "states": {
+            "over": 100,
+            "health": 85,
+            "warning": 30,
+            "critical": 20
+        },
+        "format": "<span size='13000' foreground='#f5e0dc'>{icon} </span> {capacity}%",
+        "format-warning": "<span size='13000' foreground='#fab387'>{icon} </span> {capacity}%",
+        "format-critical": "<span size='13000' foreground='#181825'>{icon} </span> {capacity}%",
+        "format-charging": "<span size='13000' foreground='#a6e3a1'> </span>{capacity}%",
+        "format-plugged": "<span size='13000' foreground='#a6e3a1'> </span>{capacity}%",
+        "format-alt": "<span size='13000' foreground='#f5e0dc'>{icon} </span> {time}",
+        "format-full": "<span size='13000' foreground='#89b4fa'> </span>{capacity}%",
+        "format-icons": ["", "", "", "", ""],
+        // "on-update": "~/.config/waybar/scripts/check_battery.sh",
+        "tooltip-format": "{time}"
+    },
+
+    // "power-profiles-daemon": {
+    //     "format": "{icon}",
+    //     "tooltip-format": "Power profile: {profile}\nDriver: {driver}",
+    //     "tooltip": true,
+    //     "format-icons": {
+    //         "default": "",
+    //         "performance": "",
+    //         "balanced": "",
+    //         "power-saver": ""
+    //     }
+    // },
+
+    "bluetooth": {
+        "format-connected-battery": "<span size='13000' foreground='#f9e2af'> </span>{device_battery_percentage}%",
+        // "format-device-preference": [ "device1", "device2" ], // preference list deciding the displayed device
+        "tooltip-format": "{controller_alias}\t{num_connections} connected",
+        "tooltip-format-connected": "{controller_alias}\t{controller_address}\n\n{num_connections} connected\n\n{device_enumerate}",
+        "tooltip-format-enumerate-connected": "{device_alias}\t{device_address}",
+        "tooltip-format-enumerate-connected-battery": "{device_alias}\t{device_address}\t{device_battery_percentage}%",
+        "format": "<span color=\"#fff\"></span> On",
+        "format-disabled": "<span color=\"#fff\"></span> Off",
+        "format-connected": "<span color=\"#fff\"></span> {device_alias}",
+        "format-off": "",
+        "interval": 30,
+        "on-click": "blueman-manager",
+        "format-no-controller": ""
+    }
+
+    // "custom/power": {
+    //     "format": "⏻ ",
+    //     "tooltip": false,
+    //     "menu": "on-click",
+    //     "menu-file": "~/.config/waybar/power_menu.xml", // Menu file in resources folder
+    //     "menu-actions": {
+    //         "shutdown": "shutdown",
+    //         "reboot": "reboot",
+    //         "suspend": "systemctl suspend",
+    //         "hibernate": "systemctl hibernate"
+    //     }
+    // }
+}
