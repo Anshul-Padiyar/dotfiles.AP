@@ -160,15 +160,14 @@
     // },
 
     "bluetooth": {
+        "format": "<span color=\"#f9e2af\"></span> On",
+        "format-disabled": "<span color=\"#f9e2af\"></span> Off",
+        "format-connected": "<span color=\"#f9e2af\"></span> {device_alias}",
         "format-connected-battery": "<span size='13000' foreground='#f9e2af'> </span>{device_battery_percentage}%",
-        // "format-device-preference": [ "device1", "device2" ], // preference list deciding the displayed device
         "tooltip-format": "{controller_alias}\t{num_connections} connected",
-        "tooltip-format-connected": "{controller_alias}\t{controller_address}\n\n{num_connections} connected\n\n{device_enumerate}",
-        "tooltip-format-enumerate-connected": "{device_alias}\t{device_address}",
-        "tooltip-format-enumerate-connected-battery": "{device_alias}\t{device_address}\t{device_battery_percentage}%",
-        "format": "<span color=\"#fff\"></span> On",
-        "format-disabled": "<span color=\"#fff\"></span> Off",
-        "format-connected": "<span color=\"#fff\"></span> {device_alias}",
+        "tooltip-format-connected": "{controller_alias}\n{num_connections} connected\n{device_enumerate}",
+        "tooltip-format-enumerate-connected": "{device_alias}",
+        "tooltip-format-enumerate-connected-battery": "{device_alias}\t{device_battery_percentage}%",
         "format-off": "",
         "interval": 30,
         "on-click": "blueman-manager",
