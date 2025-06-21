@@ -1,0 +1,175 @@
+# C:\Users\username\.config\starship.toml    or    ~\.config\starship.toml
+# Starship prompt configuration file
+
+# Add a newline before the prompt (set to false for single-line prompt)
+add_newline = true
+# Timeout for command execution in milliseconds
+command_timeout = 1000
+
+# Main left-aligned prompt layout
+format = """\
+$os\
+$username\
+$hostname\
+$kubernetes$directory\
+$git_branch$git_status\
+$python$nodejs$ruby$terraform$rust$golang$java$php$elixir\
+\n[󱞩](bold purple) \
+"""
+
+# Right-aligned prompt (shows time)
+right_format = """$time"""
+
+# Remove default prompt characters
+[character]
+success_symbol = ''
+error_symbol = ''
+
+# --- OS Module ---
+
+[os]
+format = '[$symbol](bold white) '
+disabled = false
+
+# OS symbols for different platforms
+[os.symbols]
+Windows = ''
+Arch = '󰣇'
+Ubuntu = ''
+Macos = '󰀵'
+
+# --- Username Module ---
+
+[username]
+style_user = 'white bold'
+style_root = 'black bold'
+format = '[$user]($style) '
+disabled = false
+show_always = true
+
+# --- Hostname Module ---
+
+[hostname]
+ssh_only = false
+format = '[󰍹](bold yellow) [$hostname](bold yellow) '
+disabled = false
+
+# --- Directory Module ---
+
+[directory]
+truncation_length = 1
+truncation_symbol = '…/'
+home_symbol = '󰋜 '
+read_only_style = '197'
+read_only = '  '
+format = 'at [$path]($style)[$read_only]($read_only_style) '
+
+# --- Git Branch Module ---
+
+[git_branch]
+symbol = ' '
+format = 'via [$symbol$branch]($style)'
+# truncation_length = 4 # Uncomment to limit branch name length
+truncation_symbol = '…/'
+style = 'bold green'
+
+# --- Git Status Module ---
+
+[git_status]
+format = '[$all_status$ahead_behind]($style) '
+style = 'bold green'
+conflicted = '🏳'
+up_to_date = ''
+untracked = '  '
+ahead = '⇡${count}'
+diverged = '⇕⇡${ahead_count}⇣${behind_count}'
+behind = '⇣${count}'
+stashed = ' '
+modified = ' '
+staged = '[++\($count\)](green)'
+renamed = '襁 '
+deleted = ' '
+
+# --- Kubernetes Context Module ---
+
+[kubernetes]
+format = 'via [󱃾 $context\($namespace\)](bold purple) '
+disabled = false
+
+# --- Disabled Modules ---
+
+[vagrant]
+disabled = true
+
+[docker_context]
+disabled = true
+
+[helm]
+disabled = true
+
+# --- Language Modules ---
+
+[python]
+disabled = false
+symbol = " "
+format = "via [$symbol($version)]($style) "
+style = "bold green"
+pyenv_version_name = true
+
+[nodejs]
+disabled = false
+symbol = " "
+format = "via [$symbol($version)]($style) "
+style = "bold green"
+
+[ruby]
+disabled = false
+symbol = " "
+format = "via [$symbol($version)]($style) "
+style = "bold red"
+
+[terraform]
+disabled = false
+symbol = "󰒆 "
+format = "via [$symbol($version)]($style) "
+style = "bold blue"
+
+# Optional language modules (set disabled = false to enable)
+[rust]
+disabled = true
+symbol = " "
+format = "via [$symbol($version)]($style) "
+style = "bold cyan"
+
+[golang]
+disabled = true
+symbol = " "
+format = "via [$symbol($version)]($style) "
+style = "bold cyan"
+
+[java]
+disabled = true
+symbol = " "
+format = "via [$symbol($version)]($style) "
+style = "bold red"
+
+[php]
+disabled = true
+symbol = " "
+format = "via [$symbol($version)]($style) "
+style = "bold purple"
+
+[elixir]
+disabled = true
+symbol = " "
+format = "via [$symbol($version)]($style) "
+style = "bold purple"
+
+# --- Time Module ---
+
+[time]
+disabled = false
+format = "[ $time]($style)"
+time_format = "%b %d, %I:%M %p"
+utc_time_offset = "local"
+style = "bold white"
