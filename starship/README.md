@@ -117,7 +117,7 @@ eval "$(starship init zsh)"
 Start a new shell instance and you should see your beautiful new shell prompt.
 If you're happy with this config, enjoy!
 
-> **Note:** This setup is meant for personal use and requires a [Nerd Font](https://www.nerdfonts.com/) for proper symbol display; to get the color scheme shown in the image, refer to the [Windows Terminal JSON file](..\windows-terminal).
+> **Note:** This setup is meant for personal use and requires a [Nerd Font](https://www.nerdfonts.com/) for proper symbol display; to get the color scheme shown in the image, refer to the [Windows Terminal JSON file](https://github.com/Anshul-Padiyar/dotfiles.ap/tree/main/windows-terminal).
 
 If you want to customize Starship further, check out the [configuration guide](https://starship.rs/config/) to tweak your prompt the way you like.
 
