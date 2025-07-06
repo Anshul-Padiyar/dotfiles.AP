@@ -18,7 +18,7 @@
 
 ## Overview
 This repository contains my curated configuration files for:
-- **[Starship](./Starship)**: A blazing-fast, cross-shell prompt with a custom theme and language/runtime indicators.
+- **[Starship](./starship)**: A blazing-fast, cross-shell prompt with a custom theme and language/runtime indicators.
 - **[Windows Terminal](./windows-terminal)**: A modern terminal emulator with a custom color scheme, font, and profile setup.
 
 All configurations are optimized for developer productivity, aesthetics, and compatibility with Nerd Fonts.
