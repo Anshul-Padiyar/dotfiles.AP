@@ -91,6 +91,17 @@ load(io.popen('starship init cmd'):read("*a"))()
 </details>
 
 <details>
+<summary>Fish</summary>
+
+Add the following to the end of `~/.config/fish/config.fish`:
+
+```fish
+starship init fish | source
+```
+
+</details>
+
+<details>
 <summary>PowerShell</summary>
 
 Add the following to the end of your PowerShell configuration (find it by running `$PROFILE`):
