@@ -30,16 +30,19 @@ All configurations are optimized for developer productivity, aesthetics, and com
 2. **Set up Windows Terminal**
    - See [windows-terminal/README.md](./windows-terminal/README.md) for color scheme, font, and profile setup.
 3. **Set up Starship Prompt**
-   - See [Starship/README.md](./Starship/README.md) for prompt installation and configuration.
+   - See [starship/README.md](./starship/README.md) for prompt installation and configuration.
 
 ---
 
 ## Folders & Index
 | Folder                                 | Description                                                      |
 |----------------------------------------|------------------------------------------------------------------|
-| [Starship](./Starship)                 | Starship prompt configuration (`starship.toml`) and usage guide. |
+| [starship](./starship)                 | Starship prompt configuration (`starship.toml`) and usage guide. |
 | [windows-terminal](./windows-terminal) | Windows Terminal settings, color scheme, and profile setup.      |
-| Screenshots                            | Visual previews of prompt, color scheme, and terminal profiles.  |
+| [fastfetch](./fastfetch)               | Fastfetch configuration for system info and ASCII logo display.  |
+| [fish](./fish)                         | Fish shell configuration and custom functions.                   |
+| [kitty](./kitty)                       | Kitty terminal emulator settings and color schemes.              |
+| [Screenshots](./Screenshots)           | Visual previews of prompt, color scheme, and terminal profiles.  |
 
 ---
 
