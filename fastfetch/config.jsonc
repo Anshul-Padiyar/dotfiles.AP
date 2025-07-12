@@ -1,0 +1,176 @@
+{
+    "$schema": "https://github.com/fastfetch-cli/fastfetch/raw/dev/doc/json_schema.json",
+    "logo": {
+//        "source": "$(find \"${XDG_CONFIG_HOME:-$HOME/.config}/fastfetch/logos/\" -name \"*.png\" | shuf -n 1)",
+        "source": "$(find \"${XDG_CONFIG_HOME:-$HOME/.config}/fastfetch/logos/arch.png\")",
+        "height": 21,
+        "padding": {
+            "top": 1,
+            "left": 1
+        }
+    },
+    "modules": [
+        // --- 1st Block ---
+        {
+            "type": "title",
+            "key": " User@Host",
+            "keyColor": "cyan"
+        },
+        {
+            "type": "os",
+            "key": "OS",
+            "keyColor": "yellow",
+            "format": "{pretty-name} {arch}"
+        },
+        {
+            "type": "kernel",
+            "key": "│ ├ Kernel",
+            "keyColor": "yellow"
+        },
+        {
+            "type": "bios",
+            "key": "│ ├󰒓 BIOS",
+            "keyColor": "yellow"
+        },
+        {
+            "type": "uptime",
+            "key": "│ ├ Uptime",
+            "keyColor": "magenta"
+        },
+        {
+            "type": "command",
+            "key": "│ └ OS-Age",
+            "keyColor": "magenta",
+            "text": "birth_install=$(stat -c %W /); current=$(date +%s); time_progression=$((current - birth_install)); days_difference=$((time_progression / 86400)); echo $days_difference days"
+        },
+        {
+            "type": "datetime",
+            "key": " Date/Time",
+            "keyColor": "magenta",
+            "format": "{hour-pretty}:{minute-pretty}:{second-pretty} {timezone-name}, {day-in-month} {month-name-short} {year} ({weekday})"
+        },
+        "break",
+        
+        // --- 2nd Block ---
+        {
+            "type": "host",
+            "key": " PC",
+            "keyColor": "green"
+        },
+        {
+            "type": "cpu",
+            "key": "│ ├ CPU",
+            "keyColor": "green",
+            "format": "{name} ({cores-physical}C/{cores-logical}T)"
+        },
+        {
+            "type": "gpu",
+            "key": "│ ├󰍛 GPU",
+            // "format": "{name}", // Shortened for space
+            "keyColor": "green"
+        },
+        {
+            "type": "memory",
+            "key": "│ ├󰍛 RAM",
+            //   "format": "{used} / {total}", // Shortened for space
+            "keyColor": "green"
+        },
+        {
+            "type": "disk",
+            "key": "│ ├ Disk",
+            // "format": "{used} / {total}", // Shortened for space
+            "keyColor": "green"
+        },
+        {
+            "type": "display",
+            "key": "│ └󰍹 Display",
+            "keyColor": "green",
+            "format": "{width}x{height} @ {refresh-rate}Hz ({type})"
+        },
+        {
+            "type": "localip",
+            "key": "󰖟 Local IP",
+            "keyColor": "blue"
+        },
+        "break",
+
+        // --- 3rd Block ---
+        {
+            "type": "packages",
+            "key": "󰏖 Packages",
+            "keyColor": "yellow"
+        },
+        {
+            "type": "shell",
+            "key": "│ ├ Shell",
+            "keyColor": "yellow"
+        },
+        {
+            "type": "terminal",
+            "key": "│ ├ Terminal",
+            "keyColor": "yellow"
+        },
+        {
+            "type": "de",
+            "key": "│ ├ DE",
+            "keyColor": "blue"
+        },
+        {
+            "type": "lm",
+            "key": "│ ├ LM",
+            "keyColor": "blue"
+        },
+        {
+            "type": "wm",
+            "key": "│ ├ WM",
+            "keyColor": "blue"
+        },
+        {
+            "type": "wmtheme",
+            "key": "│ ├󰉼 WM Theme",
+            "keyColor": "blue"
+        },
+        // {
+        //   "type": "theme",
+        //   "key": "│ ├󰉼 GTK/Qt Theme",
+        //   "keyColor": "blue",
+        // },
+        // {
+        //   "type": "icons",
+        //   "key": "│ ├󰓫 Icons",
+        //   "keyColor": "blue",
+        // },
+        // {
+        //   "type": "font",
+        //   "key": "│ ├ Font",
+        //   "keyColor": "blue",
+        // },
+        // {
+        //   "type": "cursor",
+        //   "key": "│ ├󰩼 Cursor",
+        //   "keyColor": "blue",
+        // },
+        {
+            "type": "terminalfont",
+            "key": "│ └ Terminal Font",
+            "keyColor": "blue"
+        },
+        {
+            "type": "poweradapter",
+            "key": "󰚥 Power Adapter",
+            "keyColor": "magenta"
+        },
+        {
+            "type": "battery",
+            "key": "󰁹 Battery",
+            "keyColor": "magenta"
+        },
+        "break",
+        
+        // --- 4ht Block ---
+        {
+            "type": "colors",
+            "symbol": "circle"
+        }
+    ]
+}
