@@ -1,7 +1,7 @@
 # dotfiles.AP
 
 
-![Last Update](https://img.shields.io/badge/updated-2024--06--11-success)
+![Last Update](https://img.shields.io/badge/updated-2025--08--13-success)
 
 > 🚀 Personal dotfiles and configuration for a beautiful, productive terminal experience on Windows and Linux.
 
