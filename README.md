@@ -1,62 +1,33 @@
 # dotfiles.AP
+![Last Update](https://img.shields.io/badge/updated-2025--08--25-success)
 
-
-![Last Update](https://img.shields.io/badge/updated-2025--08--13-success)
-
-> 🚀 Personal dotfiles and configuration for a beautiful, productive terminal experience on Windows and Linux.
+> 🚀 Personal dotfiles and configurations for a beautiful, productive workflow across **Windows** and **Linux**.
 
 ---
 
-## Table of Contents
-- [Overview](#overview)
-- [Quick Start](#quick-start)
-- [Folders & Index](#folders--index)
-- [Screenshots](#screenshots)
-- [Credits & References](#credits--references)
+## 📂 Folders & Index
+| Folder                                   | Description                                                                 |
+|------------------------------------------|-----------------------------------------------------------------------------|
+| [starship](./starship)                   | Starship prompt configuration (`starship.toml`) and usage guide.            |
+| [windows-terminal](./windows-terminal)   | Windows Terminal settings, color scheme, and profile setup.                 |
+| [wezterm](./wezterm)                     | WezTerm configuration and custom color schemes.                             |
+| [kitty](./kitty)                         | Kitty terminal emulator settings and Python helper scripts.                 |
+| [fish](./fish)                           | Fish shell configuration and custom functions.                              |
+| [fastfetch](./fastfetch)                 | Fastfetch config with ASCII logos (Anime & Marvel stickers included).       |
+| [vscodium-vscode](./vscodium-vscode)     | VSCode / VSCodium settings and keybindings.                                 |
+| [zen-browser](./zen-browser)             | Zen Browser containers and keyboard shortcuts.                              |
+| [enhancer-for-youtube](./enhancer-for-youtube) | Browser extension configs and custom themes for YouTube.             |
 
 ---
 
-## Overview
-This repository contains my curated configuration files for:
-- **[Starship](./starship)**: A blazing-fast, cross-shell prompt with a custom theme and language/runtime indicators.
-- **[Windows Terminal](./windows-terminal)**: A modern terminal emulator with a custom color scheme, font, and profile setup.
-
-All configurations are optimized for developer productivity, aesthetics, and compatibility with Nerd Fonts.
-
----
-
-## Quick Start
-1. **Install a Nerd Font** (e.g., JetBrainsMono Nerd Font) for best symbol support.
-2. **Set up Windows Terminal**
-   - See [windows-terminal/README.md](./windows-terminal/README.md) for color scheme, font, and profile setup.
-3. **Set up Starship Prompt**
-   - See [starship/README.md](./starship/README.md) for prompt installation and configuration.
-
----
-
-## Folders & Index
-| Folder                                 | Description                                                      |
-|----------------------------------------|------------------------------------------------------------------|
-| [starship](./starship)                 | Starship prompt configuration (`starship.toml`) and usage guide. |
-| [windows-terminal](./windows-terminal) | Windows Terminal settings, color scheme, and profile setup.      |
-| [fastfetch](./fastfetch)               | Fastfetch configuration for system info and ASCII logo display.  |
-| [fish](./fish)                         | Fish shell configuration and custom functions.                   |
-| [kitty](./kitty)                       | Kitty terminal emulator settings and color schemes.              |
-| [Screenshots](./Screenshots)           | Visual previews of prompt, color scheme, and terminal profiles.  |
-
----
-
-## Screenshots
-| Preview                                                            | Description                    |
-|--------------------------------------------------------------------|--------------------------------|
-| ![AP Color Scheme](Screenshots/color-scheme.png)                   | AP Color Scheme                |
-| ![Starship PowerShell Prompt](Screenshots/Starship-Powershell.png) | Starship PowerShell Prompt     |
-
----
-
-## Credits & References
+## 🙌 Credits & References
 - [Starship](https://starship.rs/)
+- [WezTerm](https://wezfurlong.org/wezterm/)
+- [Kitty](https://sw.kovidgoyal.net/kitty/)
 - [Windows Terminal](https://aka.ms/terminal)
+- [VSCodium](https://vscodium.com/)
+- [Zen Browser](https://zen-browser.app/)
+- [Fastfetch](https://github.com/fastfetch-cli/fastfetch)
 - [Nerd Fonts](https://www.nerdfonts.com/)
 - [JetBrainsMono Nerd Font](https://github.com/ryanoasis/nerd-fonts)
 
